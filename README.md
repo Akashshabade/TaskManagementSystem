@@ -1,18 +1,80 @@
-# Salesforce DX Project: Next Steps
+Task Management System
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+A Salesforce project for managing tasks efficiently using Lightning Web Components (LWC), Apex, and Triggers.
 
-## How Do You Plan to Deploy Your Changes?
+Features
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+Task Dashboard: View all tasks with filtering options for priority and deadlines.
 
-## Configure Your Salesforce DX Project
+Automated Notifications: Email reminders for tasks nearing their deadlines.
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+Custom Task Object: Create, edit, and delete tasks seamlessly.
 
-## Read All About It
+Installation
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+Prerequisites
+
+Salesforce Developer Org
+
+Salesforce CLI (SFDX)
+
+Git
+
+Steps
+
+Clone this repository:
+
+git clone https://github.com/Akashshabade/TaskManagementSystem.git
+
+Authenticate with your Salesforce org using the Salesforce CLI:
+
+sfdx force:auth:web:login
+
+Deploy the project to your Salesforce org:
+
+sfdx force:source:deploy -p force-app
+
+Assign permissions to the custom object and components as needed.
+
+Test the functionality by accessing the Task Dashboard component in the Lightning App Builder.
+
+Usage
+
+Navigate to the app where the Task Dashboard component is added.
+
+Use the dashboard to:
+
+Create and view tasks.
+
+Apply filters based on priority and deadlines.
+
+Receive notifications for task deadlines.
+
+File Structure
+
+TaskManagementSystem/
+├── force-app/
+│   ├── main/
+│   │   ├── default/
+│   │   │   ├── lwc/
+│   │   │   │   ├── taskDashboard/
+│   │   │   │   │   ├── taskDashboard.html
+│   │   │   │   │   ├── taskDashboard.js
+│   │   │   │   │   ├── taskDashboard.js-meta.xml
+│   │   │   ├── triggers/
+│   │   │   │   ├── TaskNotification.trigger
+│   │   │   ├── classes/
+│   │   │   │   ├── TaskController.cls
+│   │   │   │   ├── TaskController.cls-meta.xml
+│   │   │   ├── objects/
+│   │   │   │   ├── Task__c.object
+├── README.md
+├── .gitignore
+
+Contributors
+
+Akash Shabade
+
+License
+
+This project is licensed under the MIT License. See LICENSE for details.
